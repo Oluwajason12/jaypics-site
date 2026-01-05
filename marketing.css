@@ -1,0 +1,274 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f5f7fa;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background-color: #1a2a6c; /* deep navy */
+  color: white;
+  padding: 1rem 2rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav h1 { font-size: 1.8rem; }
+nav ul { list-style: none; display: flex; gap: 1.5rem; }
+nav a { color: white; text-decoration: none; font-weight: 500; }
+nav a:hover { color: #00c853; } /* emerald accent */
+.nav-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: url('City\ Skyline.jpg') no-repeat center center/cover;
+  color: white;
+  position: relative;
+}
+
+/* Optional overlay for readability */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.hero-content {
+  position: relative; /* ensures text sits above overlay */
+  z-index: 1;
+}
+
+#hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #00c853;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #007acc;
+  transform: scale(1.05);
+}
+
+/* Gallery */
+#image-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+.gallery-item {
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+#features, #pricing, #contact {
+  background: #f5f7fa;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+#features.visible, #pricing.visible, #contact.visible {
+  opacity: 1; transform: translateY(0);
+}
+h3 { font-size: 2rem; margin-bottom: 1rem; color: #1a2a6c; }
+
+#contact i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Specific icon colours */
+#contact .bi-envelope-check { color: #007acc; }   /* corporate blue for email */
+#contact .bi-whatsapp { color: #25D366; }         /* WhatsApp green */
+#contact .bi-telephone { color: #1a2a6c; }        /* deep navy for phone */
+
+/* Pricing Section */
+#pricing {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f5f7fa;
+}
+
+#pricing h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a2a6c;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  opacity: 0; /* hidden initially */
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.pricing-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.pricing-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #007acc;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00c853;
+  margin-bottom: 1rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul li {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.pricing-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #007acc;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Highlight Standard Plan */
+.featured {
+  border: 2px solid #007acc;
+  transform: scale(1.05);
+}
+
+
+.pricing-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #007acc;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Highlight Standard Plan */
+.featured {
+  border: 2px solid #007acc;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #0d1b2a; /* dark footer */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Scroll-to-top */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #1a2a6c;
+    width: 100%;
+    padding: 1rem;
+  }
+  nav ul.show { display: flex; }
+  #image-gallery { flex-direction: column; align-items: center; }
+  .gallery-item { width: 80%; }
+}
